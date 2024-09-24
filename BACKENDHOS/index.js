@@ -5,8 +5,8 @@ const port = 1000;
 
 app.get('/', (req, res) => {
     res.send('Hello')
-  })
+})
   
   app.listen(port, () => {
-    console.log(`node is running on${port}`)
+    console.log(`node is running on ${port}`)
   })

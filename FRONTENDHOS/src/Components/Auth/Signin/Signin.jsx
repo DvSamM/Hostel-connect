@@ -3,22 +3,30 @@ import log from "../../../assets/log.jpg"
 import { useFormik } from 'formik'
 import * as yup from "yup";
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
-const Signup = () => {
+    let url = "http://localhost:1000/user/signup"
+
+const Signin = () => {
     const formik = useFormik({
         initialValues: {
-            Name: "",
             Email: "",
             Password: "",
         },
 
         onSubmit: (values) => {
             console.log(values);
+            axios.post(url, values ) 
+            .then((res) => {
+              console.log(res);
+            })
+            .catch((err) => {
+              console.log(err); 
+            })
           },
           
           validationSchema: yup.object({
             Email: yup.string().required("Email is required"),
-            Name: yup.string().required("Name is required"),
             Password: yup
             .string()
             .required("Password is required")
@@ -52,13 +60,8 @@ const Signup = () => {
                 </div>
                 <div class="col-right">
                     <div class="login-form">
-                        <h2>SIGNUP!</h2>
+                        <h2>Login</h2>
                         <form onSubmit={formik.handleSubmit}>
-                            <p>
-                                <input type="text" placeholder="Name" name='Name' onChange={formik.handleChange}/>
-                                <small>{formik.errors.Name}</small>
-                                
-                            </p>
                             <p>
                                 <input type="email" placeholder="Email" name='Email' onChange={formik.handleChange}/>
                                 <small>{formik.errors.Email}</small>
@@ -73,9 +76,10 @@ const Signup = () => {
                                 <input class="btn" type="submit" value="Sing In" />
                             </p>
                             <p>
-                               <small>Have an account?</small> <a href="">
-                                <Link to="/user/Signin">
-                                Sign In.
+                                <a href="">Forget password?</a>
+                               <small>Don't have an account?</small> <a href="">
+                                <Link to="/user/Signup">
+                                Create an account.
                                 </Link>
                                 </a>
                             </p>
@@ -89,4 +93,4 @@ const Signup = () => {
   )
 }
 
-export default Signup
+export default Signin
