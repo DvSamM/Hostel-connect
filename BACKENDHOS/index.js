@@ -3,10 +3,12 @@ const app = express();
 const port = 1000;
 const userRouter = require("./routes/user.route")
 const cors = require("cors")
+const jwt = require('jsonwebtoken');
 const mongoose = require("mongoose")
 
 
 
+app.use(express.urlencoded({extended:true, limit:"100mb"}))
 app.use(express.json())
 app.use(cors())
 app.use("/user",userRouter)

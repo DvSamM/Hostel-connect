@@ -1,7 +1,4 @@
 const signupModel = require("../models/signup.model")
-
-
-
 const fetchAll = (req,res)=>{
     signupModel.find()
     .then((products)=>{
@@ -17,7 +14,6 @@ const signup = (req, res) => {
     console.log(req.body);
     let form = new signupModel(req.body)
     form.save()
-
     .then(()=>{
         console.log("saved successfully");
         res.send({status: true, message: "saved successfully"})
@@ -26,6 +22,7 @@ const signup = (req, res) => {
         console.log(err);
         res.send({status: false, message: "error while saving"})
     })
+    
 }
 
 module.exports = {
