@@ -15,16 +15,16 @@ const fetchAll = (req,res)=>{
 
 const signup = (req, res) => {
     console.log(req.body);
-
     let form = new signupModel(req.body)
     form.save()
-    res.send({form:form})
+
     .then(()=>{
         console.log("saved successfully");
+        res.send({status: true, message: "saved successfully"})
         
     }).catch((err)=>{
         console.log(err);
-        
+        res.send({status: false, message: "error while saving"})
     })
 }
 
