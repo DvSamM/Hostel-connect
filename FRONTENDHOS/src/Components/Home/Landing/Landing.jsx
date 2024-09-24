@@ -26,7 +26,7 @@ const Landing = () => {
             Join us and make unforgettable memories at BookIt Hotel!
             </p>
             <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-              <Link to="/user/Signin">         
+              <Link to="/user/Signup">         
             <button class="btn rounded-0  rounded-3 p-3  fw-bold me-3 d-lg-block" style={{backgroundColor:"#445297", color:"white"}}>
                 Get Started 
               </button>

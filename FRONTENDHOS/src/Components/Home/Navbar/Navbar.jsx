@@ -48,7 +48,7 @@ const Navbar = () => {
               </a>
             </div>
           </div>
-          <Link to="/user/Signin">
+          <Link to="/user/Signup">
           <button class="btn rounded-0 d-none fw-bold me-3 d-lg-block" style={{backgroundColor:"#445297", color:"white"}}>
             Get Started<i class="fa fa-arrow-right ms-3"></i>
           </button>
