@@ -1,6 +1,26 @@
 const express = require('express');
 const app = express();
 const port = 1000;
+const userRouter = require("./routes/user.route")
+const cors = require("cors")
+const mongoose = require("mongoose")
+
+
+
+app.use(express.json())
+app.use(cors())
+app.use("/user",userRouter)
+require("dotenv").config()
+const URI = process.env.MONGO_DB_URI
+mongoose.connect(URI)
+
+
+.then(()=>{
+    console.log("MongoDB Connected");
+})
+.catch((err)=>{
+    console.log(err);
+})
 
 
 app.get('/', (req, res) => {
