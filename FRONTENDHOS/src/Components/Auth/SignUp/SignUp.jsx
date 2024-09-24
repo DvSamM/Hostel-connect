@@ -2,9 +2,12 @@ import React from 'react'
 import log from "../../../assets/log.jpg"
 import { useFormik } from 'formik'
 import * as yup from "yup";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2'
 
 const Signup = () => {
+  let url = "http://localhost:1000/user/signup"
+  const navigate = useNavigate()
     const formik = useFormik({
         initialValues: {
             Name: "",
@@ -14,6 +17,15 @@ const Signup = () => {
 
         onSubmit: (values) => {
             console.log(values);
+            axios.post(url, values ) 
+            .then((res) => {
+              console.log(res);
+              Swal.fire("SignUp Succssfully Login to proceed");
+              navigate("user/Sigin")
+            })
+            .catch((err) => {
+              console.log(err); 
+            })
           },
           
           validationSchema: yup.object({

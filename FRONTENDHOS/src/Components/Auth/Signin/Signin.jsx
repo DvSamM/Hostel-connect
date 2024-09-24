@@ -5,7 +5,7 @@ import * as yup from "yup";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-    let url = "http://localhost:1000/user/signup"
+    
 
 const Signin = () => {
     const formik = useFormik({
@@ -16,13 +16,6 @@ const Signin = () => {
 
         onSubmit: (values) => {
             console.log(values);
-            axios.post(url, values ) 
-            .then((res) => {
-              console.log(res);
-            })
-            .catch((err) => {
-              console.log(err); 
-            })
           },
           
           validationSchema: yup.object({
