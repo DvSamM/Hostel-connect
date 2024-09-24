@@ -1,9 +1,9 @@
-const signinModel = require("../models/signin.model")
+const signupModel = require("../models/signup.model")
 
 
 
 const fetchAll = (req,res)=>{
-    signinModel.find()
+    signupModel.find()
     .then((products)=>{
         console.log(products)
     })
@@ -13,9 +13,9 @@ const fetchAll = (req,res)=>{
 }
 
 
-const signin = (req, res) => {
+const signup = (req, res) => {
     console.log(req.body);
-    let form = new signinModel(req.body)
+    let form = new signupModel(req.body)
     form.save()
 
     .then(()=>{
@@ -29,5 +29,5 @@ const signin = (req, res) => {
 }
 
 module.exports = {
-    signin,fetchAll,
+    signup,fetchAll,
 }
