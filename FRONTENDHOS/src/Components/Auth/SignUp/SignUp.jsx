@@ -22,7 +22,7 @@ const Signup = () => {
             .then((res) => {
               console.log(res);
               Swal.fire("SignUp Succssfully Login to proceed");
-              navigate("user/Sigin")
+
             })
             .catch((err) => {
               console.log(err); 
@@ -83,7 +83,7 @@ const Signup = () => {
                                 
                             </p>
                             <p>
-                                <input class="btn" type="submit" value="Sing In" />
+                                <a href="/user/signin"><input class="btn" type="submit" value="Sing In" /></a>
                             </p>
                             <p>
                                <small>Have an account?</small> <a href="">
