@@ -83,7 +83,7 @@ const Signup = () => {
                                 
                             </p>
                             <p>
-                                 <button className='btn w-100 btn-primary'>Sign in</button>
+                                 <button className='btn w-100 btn-primary'>Sign up</button>
                             </p>
                             <p>
                                <small>Have an account?</small> <a href="">
