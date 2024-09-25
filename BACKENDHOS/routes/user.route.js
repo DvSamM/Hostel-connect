@@ -3,7 +3,7 @@ const router = express.Router();
 
 const {signup, fetchAll} = require("../Controller/signup.controller")
 
-router.get("/user/signin", fetchAll)
+router.get("/signin", fetchAll)
 router.post("/signup", signup)
 
 module.exports = router
