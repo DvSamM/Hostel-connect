@@ -3,10 +3,12 @@ import log from "../../../assets/log.jpg";
 import { useFormik } from 'formik';
 import * as yup from "yup";
 import { Link, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import axios from 'axios';
 
 const Signin = () => {
     const [message, setMessage] = useState(''); // State for messages
+    
     const url = "https://hostel-connect-4-bkc9.onrender.com/user/signin"
 
     const formik = useFormik({
@@ -20,6 +22,7 @@ const Signin = () => {
             axios.post(url, values)
                 .then((res) => {
                     console.log(res);
+                    Swal.fire("Login Successful");
                     localStorage.setItem('token', res.data.token); 
                 })
                 .catch((err) => {
@@ -50,8 +53,8 @@ const Signin = () => {
 
     return (
         <>
-            <div className="wrapper login-3">
-                <div className="container d-flex" style={{ marginTop: "160px" }}>
+            <div className="wrapper login-3 ">
+                <div className="container d-flex " style={{ marginTop: "160px" }}>
                     <div className="col-left">
                         <div className="login-text">
                             <h2><img src={log} alt="Logo" /></h2>
@@ -61,30 +64,36 @@ const Signin = () => {
                             <button className='btn'>Read More</button>
                         </div>
                     </div>
-                    <div className="col-right">
-                        <div className="login-form">
-                            <h2>Login</h2>
-                            {message && <p className="error-message">{message}</p>} {/* Display the message here */}
-                            <form onSubmit={formik.handleSubmit}>
-                                <p>
-                                    <input type="email" placeholder="Email" name='Email' onChange={formik.handleChange} />
-                                    <small>{formik.errors.Email}</small>
-                                </p>
-                                <p>
-                                    <input type="password" placeholder="Password" name='Password' onChange={formik.handleChange} />
-                                    <small>{formik.errors.Password}</small>
-                                </p>
-                                <p>
-                                    <button className='btn w-100 btn-primary'>Sign in</button>
-                                </p>
-                                <p>
-                                    <a href="">Forget password?</a>
-                                    <small>Don't have an account?</small>
-                                    <Link to="/user/Signup"> Create an account.</Link>
-                                </p>
-                            </form>
-                        </div>
+            
+                <div class="col-right">
+                    <div class="login-form">
+                        <h2>Login</h2>
+                        {message && <p className="error-message fw-bolder text-danger fs-3">{message}!!!!!!!!</p>} 
+                        <form onSubmit={formik.handleSubmit}>
+                            <p>
+                                <input type="email" placeholder="Email" name='Email' onChange={formik.handleChange}/>
+                                <small>{formik.errors.Email}</small>
+                                
+                            </p>
+                            <p>
+                                <input type="password" placeholder="Password" name='Password' onChange={formik.handleChange}/>
+                                <small>{formik.errors.Password}</small>
+                                
+                            </p>
+                            <p>
+                            <button className='btn w-100 btn-primary' type='submit'>Sign in</button>
+                            </p>
+                            <p>
+                                <a href="">Forget password?</a>
+                               <small>Don't have an account?</small> <a href="">
+                                <Link to="/user/Signup">
+                                Create an account.
+                                </Link>
+                                </a>
+                            </p>
+                        </form>
                     </div>
+                </div>
                 </div>
             </div>
         </>

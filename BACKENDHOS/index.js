@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
-const port = 1000;
+const port = 3000;
 const userRouter = require("./routes/user.route")
 const cors = require("cors")
 const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const mongoose = require("mongoose")
 
 
