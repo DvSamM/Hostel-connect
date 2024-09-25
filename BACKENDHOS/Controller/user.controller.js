@@ -3,7 +3,6 @@ const signinModel = require("../models/user.model")
 const bcrypt = require('bcryptjs');
 
 
-
 const signup = async (req, res) => {
     try {
         const { Name, Email, Password } = req.body;
@@ -46,31 +45,37 @@ const signup = async (req, res) => {
     }
 };
 
-const signin = async (req, res) => {
-    try {
+    const signin = (req, res) => {
         const { Email, Password } = req.body;
-
+    
         // Check if the user exists
-        const user = await signinModel.findOne({ Email });
-        if (!user) {
-            return res.status(400).json({ status: false, message: 'Invalid credentials' });
-        }
+        signinModel.findOne({ Email })
+            .then(user => {
+                if (!user) {
+                    console.log('Invalid credentials: User not found');
+                    return res.json({ status: false, message: 'Invalid credentials' });
+                }
+    
+                // Compare password with the hashed password
+                return bcrypt.compare(Password, user.Password)
+                    .then(isMatch => {
+                        if (!isMatch) {
+                            console.log('Invalid credentials: Password mismatch');
+                            return res.json({ status: false, message: 'Invalid credentials' });
+                        }
+    
+                        // Generate a JWT token
+                        const token = jwt.sign({ Email }, process.env.JWT_SECRET, { expiresIn: '1h' });
+                        console.log('Login successful for user:', Email);
+                        return res.json({ status: true, message: 'Login successful', token });
+                    });
+            })
+            .catch(err => {
+                console.error("Error during signin:", err);
+                return res.json({ status: false, message: 'Error during signin' });
+            });
+    };
 
-        // Compare password with the hashed password
-        const isMatch = await bcrypt.compare(Password, user.Password);
-        if (!isMatch) {
-            return res.status(400).json({ status: false, message: 'Invalid credentials' });
-        }
-
-        // Generate a JWT token
-        const token = jwt.sign({ id: user._id }, 'your_jwt_secret', { expiresIn: '1h' });
-
-        res.status(200).json({ status: true, message: 'Login successful', token });
-    } catch (err) {
-        console.error("Error during signin:", err);
-        res.status(500).json({ status: false, message: 'Error during signin' });
-    }
-};
 
 module.exports = {
     signup,signin,
