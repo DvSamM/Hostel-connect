@@ -70,7 +70,12 @@ const signin = (req, res) => {
                     // Optionally update the last login time
                     user.lastLogin = new Date(); // Add this field to your schema if you want to track last login
                     return user.save().then(() => {
+                        console.log('User updated successfully:', user);
                         return res.status(200).send({ status: true, message: 'Login successful', token });
+                    })
+                    .catch(saveErr => {
+                        console.error("Error saving user:", saveErr);
+                        return res.status(500).send({ status: false, message: 'Error updating user information' });
                     });
                 });
         })
