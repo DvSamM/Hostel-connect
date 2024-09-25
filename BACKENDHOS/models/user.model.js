@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcryptjs")
 
 const signupSchema = mongoose.Schema({
     Name : {type:String, required:true},
@@ -17,6 +17,6 @@ const signinSchema = mongoose.Schema({
 
 
 const signupModel = mongoose.model("User_details", signupSchema)
-const signinModel = mongoose.model("User_details", signinSchema)
+const signinModel = mongoose.model("userSignin_details", signinSchema)
 
 module.exports = signupModel, signinModel ;

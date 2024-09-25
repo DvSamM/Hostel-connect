@@ -66,7 +66,7 @@ const Signin = () => {
                                 
                             </p>
                             <p>
-                            <button className='btn w-100 btn-primary'>Sign in</button>
+                            <button className='btn w-100 btn-primary' type='submit'>Sign in</button>
                             </p>
                             <p>
                                 <a href="">Forget password?</a>
