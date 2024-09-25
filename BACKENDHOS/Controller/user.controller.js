@@ -53,7 +53,7 @@ const signup = async (req, res) => {
             .then(user => {
                 if (!user) {
                     console.log('Invalid credentials: User not found');
-                    return res.json({ status: false, message: 'Invalid credentials' });
+                    return res.status(400).send({ status: false, message: 'Invalid credentials' });
                 }
     
                 // Compare password with the hashed password
@@ -61,13 +61,13 @@ const signup = async (req, res) => {
                     .then(isMatch => {
                         if (!isMatch) {
                             console.log('Invalid credentials: Password mismatch');
-                            return res.json({ status: false, message: 'Invalid credentials' });
+                            res.status(201).send({ status: false, message: 'Invalid credentials' });
                         }
     
                         // Generate a JWT token
                         const token = jwt.sign({ Email }, process.env.JWT_SECRET, { expiresIn: '1h' });
                         console.log('Login successful for user:', Email);
-                        return res.json({ status: true, message: 'Login successful', token });
+                        res.status(500).send({ status: true, message: 'Login successful', token });
                     });
             })
             .catch(err => {
