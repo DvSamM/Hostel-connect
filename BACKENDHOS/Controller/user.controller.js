@@ -19,7 +19,7 @@ const signup = async (req, res) => {
                 bcrypt.hash(Password, 10)
                     .then(hashedPassword => {
                         // Create and save the new user
-                        const newUser = new signupModel({ Name, Email, Password: hashedPassword });
+                        const newUser = new User({ Name, Email, Password: hashedPassword });
 
                         newUser.save()
                             .then(() => {
