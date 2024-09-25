@@ -61,7 +61,7 @@ const signup = async (req, res) => {
                     .then(isMatch => {
                         if (!isMatch) {
                             console.log('Invalid credentials: Password mismatch');
-                            res.status(201).send({ status: false, message: 'Invalid credentials' });
+                            res.status(400).send({ status: false, message: 'Invalid credentials' });
                         }
     
                         // Generate a JWT token
