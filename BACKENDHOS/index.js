@@ -11,7 +11,7 @@ const mongoose = require("mongoose")
 app.use(express.urlencoded({extended:true, limit:"100mb"}))
 app.use(express.json())
 app.use(cors())
-app.use("/user",userRouter)
+app.use("/user", userRouter)
 require("dotenv").config()
 const URI = process.env.MONGO_DB_URI
 mongoose.connect(URI)
