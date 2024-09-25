@@ -7,7 +7,7 @@ import Swal from 'sweetalert2'
 import axios from 'axios';
 
 const Signup = () => {
-  let url = "http://localhost:1000/user/signup"
+  let url = "http://localhost:3000/user/signup"
   const navigate = useNavigate()
     const formik = useFormik({
         initialValues: {
