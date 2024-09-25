@@ -46,10 +46,31 @@ const signup = async (req, res) => {
     }
 };
 
-const signin = (req, res) => {
-       console.log(req.body);
-       
-}
+const signin = async (req, res) => {
+    try {
+        const { Email, Password } = req.body;
+
+        // Check if the user exists
+        const user = await signinModel.findOne({ Email });
+        if (!user) {
+            return res.status(400).json({ status: false, message: 'Invalid credentials' });
+        }
+
+        // Compare password with the hashed password
+        const isMatch = await bcrypt.compare(Password, user.Password);
+        if (!isMatch) {
+            return res.status(400).json({ status: false, message: 'Invalid credentials' });
+        }
+
+        // Generate a JWT token
+        const token = jwt.sign({ id: user._id }, 'your_jwt_secret', { expiresIn: '1h' });
+
+        res.status(200).json({ status: true, message: 'Login successful', token });
+    } catch (err) {
+        console.error("Error during signin:", err);
+        res.status(500).json({ status: false, message: 'Error during signin' });
+    }
+};
 
 module.exports = {
     signup,signin,
