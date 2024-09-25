@@ -4,6 +4,7 @@ const port = 1000;
 const userRouter = require("./routes/user.route")
 const cors = require("cors")
 const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
 const mongoose = require("mongoose")
 
 

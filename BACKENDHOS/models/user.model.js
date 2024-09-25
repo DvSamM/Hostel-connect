@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const bcrypt = require("bcryptjs")
+const bcrypt = require("bcrypt")
 
 const signupSchema = mongoose.Schema({
     Name : {type:String, required:true},
@@ -8,14 +8,15 @@ const signupSchema = mongoose.Schema({
     dateAdded : {type:String, default:Date.now()}
 })
 
-signupSchema.pre("save", function(next){
-    bcrypt.hash(this.Password,  10, (err, hash)=>{
-        this.Password = hash;
-        next()
-    })
+const signinSchema = mongoose.Schema({
+    Email : {type:String, required:true},
+    Password : {type:String, required:true},
+    dateAdded : {type:String, default:Date.now()}
 })
 
 
-const signupModel = mongoose.model("User_details", signupSchema)
 
-module.exports = signupModel;
+const signupModel = mongoose.model("User_details", signupSchema)
+const signinModel = mongoose.model("User_details", signinSchema)
+
+module.exports = signupModel, signinModel ;
