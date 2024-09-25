@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const Signup = () => {
   const [message, setMessage] = useState(''); // State to hold the message
-  const url = "https://hostel-connect-3-cxpn.onrender.com/user/signup";
+   const url = "https://hostel-connect-4-bkc9.onrender.com/user/signup"
   const navigate = useNavigate();
 
   const formik = useFormik({

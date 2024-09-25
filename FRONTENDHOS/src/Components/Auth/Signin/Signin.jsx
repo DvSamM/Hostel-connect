@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const Signin = () => {
     const [message, setMessage] = useState(''); // State for messages
-    
+
     const url = "https://hostel-connect-4-bkc9.onrender.com/user/signin"
 
     const formik = useFormik({
@@ -26,8 +26,8 @@ const Signin = () => {
                     localStorage.setItem('token', res.data.token); 
                 })
                 .catch((err) => {
-                    console.log(err);
-                    setMessage(err.response?.data.message || 'An error occurred'); // Se
+                    console.log(err.response);
+                    setMessage(err.response?.data.message || 'An error occurred'); 
                 });
         },
 
