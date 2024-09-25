@@ -1,5 +1,4 @@
-const signupModel = require("../models/user.model")
-const signinModel = require("../models/user.model")
+const User = require("../models/user.model")
 const bcrypt = require('bcryptjs');
 
 
@@ -9,7 +8,7 @@ const signup = async (req, res) => {
         console.log(req.body);
 
         // Check if the user already exists
-        signupModel.findOne({ Email })
+        User.findOne({ Email })
             .then(existingUser => {
                 if (existingUser) {
                     console.log('User already exists');
@@ -49,7 +48,7 @@ const signin = (req, res) => {
     const { Email, Password } = req.body;
 
     // Check if the user exists
-    signupModel.findOne({ Email })
+    User.findOne({ Email })
         .then(user => {
             if (!user) {
                 console.log('Invalid credentials: User not found');
@@ -57,7 +56,7 @@ const signin = (req, res) => {
             }
 
             // Compare password with the hashed password
-            return bcrypt.compare(Password, User_details.Password)
+            return bcrypt.compare(Password, user.Password)
                 .then(isMatch => {
                     if (!isMatch) {
                         console.log('Invalid credentials: Password mismatch');
@@ -65,12 +64,12 @@ const signin = (req, res) => {
                     }
 
                     // Generate a JWT token
-                    const token = jwt.sign({ Email: User_details.Email }, process.env.JWT_SECRET, { expiresIn: '1h' });
+                    const token = jwt.sign({ Email: user.Email }, process.env.JWT_SECRET, { expiresIn: '1h' });
                     console.log('Login successful for user:', Email);
 
-                    // Update the last login time or other user info
-                    User_details.lastLogin = new Date(); // Assuming you want to save the last login time
-                    return User_details.save().then(() => {
+                    // Optionally update the last login time
+                    user.lastLogin = new Date(); // Add this field to your schema if you want to track last login
+                    return user.save().then(() => {
                         return res.status(200).send({ status: true, message: 'Login successful', token });
                     });
                 });
