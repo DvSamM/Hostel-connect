@@ -60,7 +60,7 @@ const Signup = () => {
                         <p>
                         Experience a range of beautifully designed rooms and suites that cater to all your needs. Each room is equipped with:
                         </p>
-                        <a class="btn" href="">Read More</a>
+                        <button className='btn'>Read More</button>
                     </div>
                 </div>
                 <div class="col-right">

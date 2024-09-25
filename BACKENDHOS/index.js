@@ -8,7 +8,6 @@ const bcrypt = require('bcryptjs');
 const mongoose = require("mongoose")
 
 
-
 app.use(express.urlencoded({extended:true, limit:"100mb"}))
 app.use(express.json())
 app.use(cors())
