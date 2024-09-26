@@ -26,9 +26,10 @@ const App = () => {
     <Route path='/user/Signin' element={<Signin/>} />
     </Route>
 
-    <Route path="/user/Signup" element={<Signup setIsSignedUp={setIsSignedUp} />} />
+    
       <Route path="/user/dashboard" element={<Layoutdash />}>
-        <Route path="/user/dashboard" element={isSignedUp ? <Dashboard /> : <Navigate to="/user/signup" />} />
+        <Route path="/user/dashboard" element={ <Dashboard/>} />
+        <Route path="/user/dashboard" element={ <Navigate to="/user/Signup" />} />
       </Route>
     </Routes>
     </>

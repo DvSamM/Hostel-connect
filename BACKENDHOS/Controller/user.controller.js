@@ -10,22 +10,6 @@ const signup = async (req, res) => {
         // Check if the user already exists
         const existingUser = await userModel.findOne({ Email });
         if (existingUser) {
-<<<<<<< HEAD
-            console.log('User already exists');
-            return res.status(400).send({ status: false, message: 'User already exists' });
-        } else {
-            // Hash the password
-            const hashedPassword = await bcrypt.hash(Password, 10);
-    
-            // Create and save the new user
-            const newUser = new User({ Name, Email, Password: hashedPassword });
-    
-            await newUser.save();
-            console.log("User saved successfully");
-            res.status(201).send({ status: true, message: "User registered successfully" });
-        }
-
-=======
             return res.status(400).json({ status: false, message: 'User already exists' });
         }else{
             // Hash the password
@@ -34,7 +18,6 @@ const signup = async (req, res) => {
         // Create and save the new user
         const newUser = new userModel({ Name, Email, Password: hashedPassword });
         await newUser.save();
->>>>>>> 6add4a49214ae22abea923f9fca6446e1652a246
 
         console.log("User saved successfully");
         res.status(201).json({ status: true, message: "User registered successfully" });

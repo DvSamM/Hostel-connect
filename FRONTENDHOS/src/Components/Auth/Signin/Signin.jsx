@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import log from "../../../assets/log.jpg";
 import { useFormik } from 'formik';
 import * as yup from "yup";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate,  } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 
 const Signin = () => {
     const [message, setMessage] = useState(''); // State for messages
-    navigate = useNavigate();   
+   const navigate = useNavigate();   
     // const url = "https://hostel-connect-4-bkc9.onrender.com/user/signin"
 
      const url = "http://localhost:3000/user/signin"
