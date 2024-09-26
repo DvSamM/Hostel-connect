@@ -30,6 +30,7 @@ const App = () => {
             index 
             element={isSignedUp ? <Dashboard /> : <Navigate to="/user/signup" />} 
           />
+          <Route path='/user/dashboard' element={<Dashboard/>}></Route>
         </Route>
       </Routes>
     </>
