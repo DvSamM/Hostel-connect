@@ -9,7 +9,6 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import NotFound from './Components/404/Notfound';
 
 const App = () => {
-  const [isSignedUp, setIsSignedUp] = useState();
 
   return (
     <>
@@ -22,17 +21,21 @@ const App = () => {
 
 
     <Route path='/' element={<Layout/>}>
-    <Route path='/user/Signup' element={<Signup setIsSignedUp={setIsSignedUp} />} />
+    <Route path='/user/Signup' element={<Signup/>} />
     <Route path='/user/Signin' element={<Signin/>} />
     </Route>
-        <Route path="/user/dashboard" element={<Layoutdash />}>
-          <Route 
-            index 
-            element={isSignedUp ? <Dashboard /> : <Navigate to="/user/signup" />} 
-          />
-          <Route path='/user/dashboard' element={<Dashboard/>}></Route>
-        </Route>
+
+
+    <Route path="/user/dashboard" element={<Layoutdash />}>
+        <Route path="/user/dashboard" element={ <Dashboard/>} />
+        <Route path="/user/dashboard" element={ <Navigate to="/user/Signup" />} />
+      </Route>
+      
       </Routes>
+
+    
+     
+
     </>
   );
 };
