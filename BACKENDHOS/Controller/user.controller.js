@@ -11,17 +11,18 @@ const signup = async (req, res) => {
         if (existingUser) {
             console.log('User already exists');
             return res.status(400).send({ status: false, message: 'User already exists' });
+        } else {
+            // Hash the password
+            const hashedPassword = await bcrypt.hash(Password, 10);
+    
+            // Create and save the new user
+            const newUser = new User({ Name, Email, Password: hashedPassword });
+    
+            await newUser.save();
+            console.log("User saved successfully");
+            res.status(201).send({ status: true, message: "User registered successfully" });
         }
 
-        // Hash the password
-        const hashedPassword = await bcrypt.hash(Password, 10);
-
-        // Create and save the new user
-        const newUser = new User({ Name, Email, Password: hashedPassword });
-
-        await newUser.save();
-        console.log("User saved successfully");
-        res.status(201).send({ status: true, message: "User registered successfully" });
 
     } catch (err) {
         console.error("Error during signup:", err);

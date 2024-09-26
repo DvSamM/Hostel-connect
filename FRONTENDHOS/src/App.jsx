@@ -4,6 +4,8 @@ import Landing from './Components/Home/Landing/Landing'
 import { Route, Routes } from 'react-router-dom'
 import Signin from './Components/Auth/Signin/Signin'
 import Signup from './Components/Auth/SignUp/SignUp'
+import Layoutdash from './Components/Dashboard/Layoutdash'
+import Dashboard from './Components/Dashboard/Dashboard'
 
 const App = () => {
   return (
@@ -19,6 +21,10 @@ const App = () => {
     <Route path='/' element={<Layout/>}>
     <Route path='/user/Signup' element={<Signup/>} />
     <Route path='/user/Signin' element={<Signin/>} />
+    </Route>
+
+    <Route path='/user/dashboard' element={<Layoutdash/>}>
+    <Route path='/user/dashboard' element={<Dashboard/>}></Route>
     </Route>
     </Routes>
     </>

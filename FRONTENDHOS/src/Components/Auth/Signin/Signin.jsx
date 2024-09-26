@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const Signin = () => {
     const [message, setMessage] = useState(''); // State for messages
-
+    navigate = useNavigate();   
     const url = "https://hostel-connect-4-bkc9.onrender.com/user/signin"
 
     const formik = useFormik({
@@ -23,6 +23,7 @@ const Signin = () => {
                 .then((res) => {
                     console.log(res);
                     Swal.fire("Login Successful");
+                    navigate("/user/dashboard")
                     localStorage.setItem('token', res.data.token); 
                 })
                 .catch((err) => {
