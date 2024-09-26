@@ -9,7 +9,7 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import NotFound from './Components/404/Notfound';
 
 const App = () => {
-  const [isSignedUp, setIsSignedUp] = useState(false);
+  const [isSignedUp, setIsSignedUp] = useState();
 
   return (
     <>
