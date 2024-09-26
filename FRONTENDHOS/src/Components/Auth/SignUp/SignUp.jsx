@@ -6,11 +6,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 
-const Signup = () => {
+const Signup = ({ setIsSignedUp }) => {
   const [message, setMessage] = useState(''); // State to hold the message
   //  const url = "https://hostel-connect-4-bkc9.onrender.com/user/signup"
    const url = "http://localhost:3000/user/signup"
-   
+
   const navigate = useNavigate();
 
   const formik = useFormik({
@@ -26,6 +26,7 @@ const Signup = () => {
         .then((res) => {
           console.log(res);
           Swal.fire("User Registered, Login to proceed");
+          setIsSignedUp(true); 
           navigate("/user/Signin");
         })
         .catch((err) => {
