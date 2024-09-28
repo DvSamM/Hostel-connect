@@ -33,7 +33,7 @@ const signin = (req, res) => {
     const { Email, Password } = req.body;
 
     // Check if the user exists
-    userModel.findOne({ Email })
+     userModel.findOne({ Email })
         .then(user => {
             if (!user) {
                 console.log('Invalid credentials: User not found');
