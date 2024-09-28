@@ -42,6 +42,9 @@
     .navbar-light .navbar-nav {
         border-top: 1px solid #EEEEEE;
     }
+    .hotel img{
+        width: 100%;
+    }
 }
 
 .navbar-light .navbar-brand,
@@ -71,7 +74,9 @@
         transition: .5s;
         
     }
-
+    .hotel img{
+        width: 100%;
+    }
     .navbar .nav-item:hover .dropdown-menu {
         transform: rotateX(0deg);
         visibility: visible;
@@ -113,7 +118,11 @@
         -webkit-clip-path: none;
         clip-path: none;
     }
+    .hotel img{
+        width: 100%;
+    }
 }
+
 
 .login-3 .login-text {
     position: relative;

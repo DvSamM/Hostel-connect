@@ -31,7 +31,7 @@ const Navbardash = () => {
         <button class="btn btn-outline-success border-0" type="submit" style={{backgroundColor:"#445297", color:"white"}}>Search</button>
       </form>
       <div style={{border:"1px solid black", borderRadius:"30px", padding:"5px", margin:"5px" }}>
-      <i class="fa-duotone fa fa-solid fa-user fa-2x d-sm-none" ></i>
+      <i class="fa-duotone fa fa-solid fa-user fa-2x "></i>
       </div>
     </div>
   </div>
