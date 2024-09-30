@@ -4,21 +4,25 @@ const router = express.Router();
 // Array of hotel objects
 const hotels = [
   {
+    id: 1,
     name: 'Hotel Imperial',
     description: 'A luxurious hotel in the heart of the city.',
     imageUrl: 'https://example.com/imperial.jpg',
   },
   {
+    id: 2,
     name: 'Hotel Nest',
     description: 'A cozy and affordable stay.',
     imageUrl: 'https://example.com/nest.jpg',
   },
   {
+    id: 3,
     name: 'Hotel Star',
     description: 'A modern hotel with excellent amenities.',
     imageUrl: 'https://example.com/star.jpg',
   },
   {
+    id: 4,
     name: 'Hotel Hilton',
     description: 'A renowned hotel chain with premium services.',
     imageUrl: 'https://example.com/hilton.jpg',

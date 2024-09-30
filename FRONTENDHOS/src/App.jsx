@@ -7,6 +7,7 @@ import Signup from './Components/Auth/SignUp/SignUp';
 import Layoutdash from './Components/Dashboard/Layoutdash';
 import Dashboard from './Components/Dashboard/Dashboard';
 import NotFound from './Components/404/Notfound';
+import Hoteldetails from './Components/Hotels/Hoteldetails';
 
 const App = () => {
 
@@ -30,7 +31,10 @@ const App = () => {
         <Route path="/user/dashboard" element={ <Dashboard/>} />
         <Route path="/user/dashboard" element={ <Navigate to="/user/Signup" />} />
       </Route>
-      
+
+      <Route>
+        <Route path='/hotel/:hotelid' element={<Hoteldetails/>}/>
+      </Route>
       </Routes>
 
     
