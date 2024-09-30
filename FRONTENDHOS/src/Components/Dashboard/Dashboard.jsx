@@ -34,7 +34,7 @@ const Dashboard = () => {
 
       <div className="container">
         <div>
-          <h1 className="text-center display-2 mb-4">Elevate Your Gatewayy</h1>
+          <h1 className="text-center display-2 mb-4">Elevate Your Gatewayyd</h1>
           <p className='text-center'>Indulge in the comfort and elegance of our meticulously designed</p>
         </div>
         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
