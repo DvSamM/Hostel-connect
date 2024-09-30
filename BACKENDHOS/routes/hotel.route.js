@@ -7,25 +7,19 @@ const hotels = [
     id: 1,
     name: 'Hotel Imperial',
     description: 'A luxurious hotel in the heart of the city.',
-    imageUrl: 'https://example.com/imperial.jpg',
+    imageUrl: 'https://via.placeholder.com/150/0000FF/808080?Text=PAKAINFO.com',
   },
   {
     id: 2,
     name: 'Hotel Nest',
     description: 'A cozy and affordable stay.',
-    imageUrl: 'https://example.com/nest.jpg',
+    imageUrl: 'https://via.placeholder.com/150/000000/FFFFFF/',
   },
   {
     id: 3,
     name: 'Hotel Star',
     description: 'A modern hotel with excellent amenities.',
-    imageUrl: 'https://example.com/star.jpg',
-  },
-  {
-    id: 4,
-    name: 'Hotel Hilton',
-    description: 'A renowned hotel chain with premium services.',
-    imageUrl: 'https://example.com/hilton.jpg',
+    imageUrl: 'https://farm9.staticflickr.com/8505/8441256181_4e98d8bff5_z_d.jpg',
   },
 ];
 
