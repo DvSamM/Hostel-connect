@@ -33,12 +33,11 @@ const Navbardash = () => {
           </a>
         </li>
       </ul>
+     
       <div style={{marginLeft:"10px"}}>
-        <img src={profile} alt="" />
+        <img src={profile} alt="" className='toggler' type="button" />
       </div>
-      {/* <div style={{border:"1px solid black", borderRadius:"30px", padding:"5px", margin:"5px" }}>
-      <i class="fa-duotone fa fa-solid fa-user fa-2x "></i>
-      </div> */}
+
     </div>
   </div>
 </nav>
