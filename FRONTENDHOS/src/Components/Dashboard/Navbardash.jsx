@@ -1,12 +1,13 @@
 import React from 'react'
 import log from "../../assets/log.jpg";
+import profile from "../../assets/profile.png";
 const Navbardash = () => {
   return (
     <>
 
     <nav class="navbar navbar-expand-lg bg-body-white shadow">
   <div class="container-fluid">
-  <img src={log}  alt="Book It" style={{width:"150px"}}/>
+  <img draggable='false' src={log} alt="Book It" style={{width:"150px"}}/>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -21,7 +22,10 @@ const Navbardash = () => {
           <a class="nav-link active fw-bold" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-bold" href="#">About</a>
+          <a class="nav-link fw-bold" href="#">Hotels</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-bold" href="#">About Us</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link fw-bold " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -29,9 +33,11 @@ const Navbardash = () => {
           </a>
         </li>
       </ul>
-      <div style={{border:"1px solid black", borderRadius:"30px", padding:"5px", margin:"5px" }}>
-      <i class="fa-duotone fa fa-solid fa-user fa-2x "></i>
+     
+      <div style={{marginLeft:"10px"}}>
+        <img src={profile} alt="" className='toggler' type="button" />
       </div>
+
     </div>
   </div>
 </nav>
