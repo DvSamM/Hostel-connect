@@ -33,9 +33,8 @@ const Navbardash = () => {
           </a>
         </li>
       </ul>
-     
       <div style={{marginLeft:"10px"}}>
-        <img src={profile} alt="" className='toggler' type="button" />
+        <img src={profile} alt="" />
       </div>
 
     </div>
