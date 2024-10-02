@@ -25,14 +25,14 @@ const rooms = [
 const hotels = [
   {
     id: 1,
-    name: 'Hotel Imperial',
-    description: 'A luxurious hotel in the heart of the city.',
+    name: 'Transcorp Hilton',
+    description: 'A luxurious hotel in the heart of the city of Abuja.',
     imageUrl: 'https://via.placeholder.com/150/0000FF/808080?Text=PAKAINFO.com',
   },
   {
     id: 2,
-    name: 'Hotel Nest',
-    description: 'A cozy and affordable stay.',
+    name: 'Nest Hotel',
+    description: 'A cozy and affordable stay in Ogbomsho.',
     imageUrl: 'https://via.placeholder.com/150/000000/FFFFFF/',
   },
   {
