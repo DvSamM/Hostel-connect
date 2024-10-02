@@ -12,7 +12,12 @@ const Navbardash = () => {
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  
+      <form class="d-flex mx-auto pt-2  me-auto" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search For" aria-label="Search"/>
+        <button class="btn btn-outline-success border-0" type="submit" style={{backgroundColor:"#445297", color:"white"}}>Search</button>
+      </form>
+      <ul class="navbar-nav  mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active fw-bold" aria-current="page" href="#">Home</a>
         </li>
@@ -26,14 +31,8 @@ const Navbardash = () => {
           <a class="nav-link fw-bold " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Contact
           </a>
-         
         </li>
-       
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search For" aria-label="Search"/>
-        <button class="btn btn-outline-success border-0" type="submit" style={{backgroundColor:"#445297", color:"white"}}>Search</button>
-      </form>
       <div style={{marginLeft:"10px"}}>
         <img src={profile} alt="" />
       </div>

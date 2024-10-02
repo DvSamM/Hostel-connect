@@ -84,25 +84,38 @@ const Dashboard = () => {
         <div className='container'>
           <div className='row mt-5'>
             <div className='col-10 col-sm-8   col-lg-5'>
-          <article className='mt-2'>
-            <p className='fs-4'>ACCOMODATION</p>
-          <input type="text" placeholder='Packages' className='form-control'/>
-          </article>
-          <article className='mt-2'>
-          <input type="text" placeholder='Offers' className='form-control' />
-          </article>
-          <article className='mt-2'>
-          <input type="text" placeholder='Contact' className='form-control' />
-          </article>
+              
+            <p className='fs-4 mt-2'>ACCOMODATION</p>
+            <select class="form-select" aria-label="Default select example">
+  <option disabled selected>Packages</option>
+  <option value="1">Dining Packages</option>
+  <option value="2">Seasonal Packages</option>
+  <option value="3">Business</option>
+</select>
+
+<select class="form-select mt-2" aria-label="Default select example">
+  <option disabled selected>Offers</option>
+  <option value="1">Loyalty Program Benefits</option>
+  <option value="2">Spa Retreat</option>
+  <option value="3">Last-Minute Deals</option>
+</select>
+
           <div>
-          <article className='mt-2'>
-            <p className='fs-4'>AMENTIES</p>
-          <input type="text" placeholder='Dining' className='form-control' />
-          </article>
-          <article>
-          <input type="text" placeholder='Explore' className='mt-2 form-control' />
-          </article>
-          <button class="btn rounded-1 mt-3 d-none fw-bold me-3 d-lg-block" style={{backgroundColor:"#445297", color:"white"}}>
+            <p className='fs-4 mt-2'>AMENTIES</p>
+            <select class="form-select mt-2" aria-label="Default select example">
+  <option disabled selected>Dinning</option>
+  <option value="breakfast">Breakfast</option>
+  <option value="lunch">Lunch</option>
+  <option value="dinner">Dinner</option>
+  <option value="room-service">Room Service</option>
+</select>
+<select class="form-select mt-2" aria-label="Default select example">
+  <option disabled selected>Explore</option>
+  <option value="amenities">Amenities</option>
+  <option value="rooms">Rooms & Suites</option>
+  <option value="services">Services</option>
+</select>
+          <button class="btn rounded-1 mt-3 mb-4 fw-bold me-3 d-lg-block" style={{backgroundColor:"#445297", color:"white"}}>
             Book Now
           </button>
           </div>
