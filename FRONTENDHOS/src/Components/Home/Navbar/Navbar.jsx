@@ -23,7 +23,7 @@ const Navbar = () => {
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <a href="" class="nav-item nav-link active">
+            <a href="/" class="nav-item nav-link active">
               Home
             </a>
             <a href="" class="nav-item nav-link">
@@ -31,7 +31,7 @@ const Navbar = () => {
             </a>
             <div class="nav-item dropdown">
               <a
-                href="#"
+                href=""
                 class="nav-link "
                 data-bs-toggle="dropdown"
               >
@@ -39,17 +39,13 @@ const Navbar = () => {
               </a>
             </div>
             <div class="nav-item dropdown">
-              <a
-                href="#"
-                class="nav-link"
-                data-bs-toggle="dropdown"
-              >
+              <a href="" class="nav-link" >
                 Rooms
               </a>
             </div>
           </div>
-          <Link to="/user/Signup">
-          <button class="btn rounded-0 d-none fw-bold me-3 d-lg-block" style={{backgroundColor:"#445297", color:"white"}}>
+          <Link to="/user/Signup" className="text-decoration-none">
+          <button class="btn  fw-bold me-3 d-lg-block " style={{backgroundColor:"#445297", color:"white"}}>
             Get Started<i class="fa fa-arrow-right ms-3"></i>
           </button>
           </Link>

@@ -51,7 +51,7 @@ const Dashboard = () => {
           <div className="hotel">
             <img
               src={hot}
-              className="img-fluid rounded-3 mb-4"
+              className="img-fluid card-img rounded-3 mb-4"
               alt="Example image"
               style={{ width: "100%", height: "725px", objectFit: "cover" }}
             />
@@ -502,17 +502,17 @@ const Dashboard = () => {
             <MDBCol md='2' lg='2' xl='2' className='mx-auto mb-4'>
               <h6 className='text-uppercase fw-bold mb-4'>HOTELS</h6>
               <p>
-                <a href='#!' className='text-reset'>
+                <a href='/hotels' className='text-reset'>
                 Transcorp Hilton
                 </a>
               </p>
               <p>
-                <a href='#!' className='text-reset'>
+                <a href='/hotels' className='text-reset'>
                   Nest Hostel
                 </a>
               </p>
               <p>
-                <a href='#!' className='text-reset'>
+                <a href='/hotels' className='text-reset'>
                   Eko Hotel
                 </a>
               </p>
@@ -540,11 +540,12 @@ const Dashboard = () => {
 
       <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
         © 2024 Copyright:
-        <a className='text-reset fw-bold' href='/'>
+        <a className='text-decoration-none ps-2 fw-bold' href='/'>
           Bookit.Com
         </a>
       </div>
     </MDBFooter>
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
     </>
   );
 };
