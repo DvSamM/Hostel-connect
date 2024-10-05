@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-const Hoteldetails = () => {
+const   Hoteldetails = () => {
     const params = useParams()
     const [product, setProduct] = useState([])
     
@@ -13,7 +13,15 @@ const Hoteldetails = () => {
     fetchData()
     }, [params.hotelid])
   return (
+    <>
     <div>Hoteldetails name:{product.name} </div>
+
+
+
+
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    </>
   )
 }
 
