@@ -3,6 +3,15 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 
+const fetchEmail = (req,res)=>{
+    userModel.find()
+    .then((Email)=>{
+        res.status(200).json(Email)
+    })
+    .catch((err)=>{
+        console.log("i dey get email")
+    })
+}
 const signup = async (req, res) => {
     try {
         const { Name, Email, Password } = req.body;
@@ -63,5 +72,5 @@ const signin = (req, res) => {
 
 module.exports = {
     signup,
-    signin,
+    signin,fetchEmail
 };

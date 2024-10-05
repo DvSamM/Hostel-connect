@@ -317,6 +317,10 @@ main {
   blockquote {
     margin-bottom: 0px !important;
   }
+  .foot{
+    background-color: #445297;
+color: white !important;
+  }
 
 
 

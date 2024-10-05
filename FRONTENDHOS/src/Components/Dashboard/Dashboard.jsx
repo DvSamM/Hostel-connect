@@ -12,6 +12,7 @@ const Dashboard = () => {
 
   const [hotels, setHotels] = useState([]);
   const [rooms, setRooms] = useState([]);
+  const [email, setEmail] = useState([])
 
   useEffect(() => {
     // Fetch hotels from the backend
@@ -25,6 +26,17 @@ const Dashboard = () => {
   }, []);
   useEffect(() => {
     // Fetch hotels from the backend
+    fetch("http://localhost:3000/user/getemail")
+      .then((response) => response.json())
+      .then((data) => {
+        setEmail(data);
+        console.log(data);
+      })
+      .catch((error) => console.error("Error fetching hotels:", error));
+  }, []);
+
+  useEffect(() => {
+    // Fetch hotels from the backend
     fetch("http://localhost:3000/api/hotels")
       .then((response) => response.json())
       .then((data) => {
@@ -36,10 +48,21 @@ const Dashboard = () => {
 
   return (
     <>
+ <div>
+      
+   
+  
+  
+    </div>
       <div className="px-4 pt-5 my-5 text-center">
         <h1 className="display-4 fw-bold text-body-emphasis">
           WELCOME TO BOOKIT!
         </h1>
+        {email.map((user) => (
+          <li key={user._id}>
+            <p>Name: {user.Name}</p>
+          </li>
+        ))}
         <div className="col-lg-6 mx-auto">
           <p className="lead mb-4">
             Discover the ultimate hotel booking experience with our
@@ -58,7 +81,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-
+    
       <div className="container">
         <div>
           <h1 className="text-center display-2 mb-4">Elevate Your Gatewayyd</h1>
@@ -102,7 +125,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="container">
+      <div className="container pt-5 pb-5">
         <div className="row mt-5">
           <div className="col-10 col-sm-8   col-lg-5">
             <p className="fs-4 mt-2">ACCOMODATION</p>
@@ -169,7 +192,8 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      <div className="container">
+
+      <div className="container pt-3">
         <div>
           <h1 className="text-center display-2 mb-4">Explore Our Hotels</h1>
           <p className="text-center">
@@ -213,7 +237,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style={{ maxWidth: "100%" }}>
+      <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 pt-4 mt-5" style={{ maxWidth: "100%" }}>
         <div className="container">
           <section className="mx-auto my-5" style={{ maxWidth: "23rem" }}>
             <div className="card map-card">
@@ -458,7 +482,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <MDBFooter bgColor='ligt' className='text-center text-lg-start text-muted'>
+      <MDBFooter bgColor='ligt' className='text-center mt-4 foot text-lg-start text-muted'>
       <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
         <div className='me-5 d-none d-lg-block'>
           <span>Get connected with us on social networks:</span>
@@ -466,22 +490,22 @@ const Dashboard = () => {
 
         <div>
           <a href='' className='me-4 text-reset'>
-            <MDBIcon color='secondary' fab icon='facebook-f' />
+            <MDBIcon color='white' fab icon='facebook-f' />
           </a>
           <a href='' className='me-4 text-reset'>
-            <MDBIcon color='secondary' fab icon='twitter' />
+            <MDBIcon color='white' fab icon='twitter' />
           </a>
           <a href='' className='me-4 text-reset'>
-            <MDBIcon color='secondary' fab icon='google' />
+            <MDBIcon color='white' fab icon='google' />
           </a>
           <a href='' className='me-4 text-reset'>
-            <MDBIcon color='secondary' fab icon='instagram' />
+            <MDBIcon color='white' fab icon='instagram' />
           </a>
           <a href='' className='me-4 text-reset'>
-            <MDBIcon color='secondary' fab icon='linkedin' />
+            <MDBIcon color='white' fab icon='linkedin' />
           </a>
           <a href='' className='me-4 text-reset'>
-            <MDBIcon color='secondary' fab icon='github' />
+            <MDBIcon color='white' fab icon='github' />
           </a>
         </div>
       </section>
@@ -491,7 +515,7 @@ const Dashboard = () => {
           <MDBRow className='mt-3'>
             <MDBCol md='3' lg='4' xl='3' className='mx-auto mb-4'>
               <h6 className='text-uppercase fw-bold mb-4'>
-                <MDBIcon color='secondary' icon='gem' className='me-3' />
+                <MDBIcon color='white' icon='gem' className='me-3' />
                 BOOKIT
               </h6>
               <p>
@@ -522,15 +546,15 @@ const Dashboard = () => {
             <MDBCol md='4' lg='3' xl='3' className='mx-auto mb-md-0 mb-4'>
               <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
               <p>
-                <MDBIcon color='secondary' icon='home' className='me-2' />
+                <MDBIcon color='white' icon='home' className='me-2' />
                 Nigeria Oyo
               </p>
               <p>
-                <MDBIcon color='secondary' icon='envelope' className='me-3' />
+                <MDBIcon color='white' icon='envelope' className='me-3' />
                 eaajejohnson@gmail.com | samuelsam91e@gmail.com
               </p>
               <p>
-                <MDBIcon color='secondary' icon='phone' className='me-3' /> +2348160885374
+                <MDBIcon color='white' icon='phone' className='me-3' /> +2348160885374
               </p>
 
             </MDBCol>
