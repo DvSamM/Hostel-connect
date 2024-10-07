@@ -12,7 +12,7 @@ const Dashboard = () => {
 
   const [hotels, setHotels] = useState([]);
   const [rooms, setRooms] = useState([]);
-  const [email, setEmail] = useState([])
+  // const [email, setEmail] = useState([])
 
   useEffect(() => {
     // Fetch hotels from the backend
@@ -24,16 +24,16 @@ const Dashboard = () => {
       })
       .catch((error) => console.error("Error fetching hotels:", error));
   }, []);
-  useEffect(() => {
-    // Fetch hotels from the backend
-    fetch("http://localhost:3000/user/getemail")
-      .then((response) => response.json())
-      .then((data) => {
-        setEmail(data);
-        console.log(data);
-      })
-      .catch((error) => console.error("Error fetching hotels:", error));
-  }, []);
+  // useEffect(() => {
+  //   // Fetch hotels from the backend
+  //   fetch("http://localhost:3000/user/getemail")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setEmail(data);
+  //       console.log(data);
+  //     })
+  //     .catch((error) => console.error("Error fetching hotels:", error));
+  // }, []);
 
   useEffect(() => {
     // Fetch hotels from the backend
@@ -58,11 +58,11 @@ const Dashboard = () => {
         <h1 className="display-4 fw-bold text-body-emphasis">
           WELCOME TO BOOKIT!
         </h1>
-        {email.map((user) => (
+        {/* {email.map((user) => (
           <li key={user._id}>
             <p>Name: {user.Name}</p>
           </li>
-        ))}
+        ))} */}
         <div className="col-lg-6 mx-auto">
           <p className="lead mb-4">
             Discover the ultimate hotel booking experience with our
