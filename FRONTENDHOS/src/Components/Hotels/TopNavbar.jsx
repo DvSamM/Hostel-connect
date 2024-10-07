@@ -20,7 +20,7 @@ const TopNavbar = () => {
       </form>
       <ul class="navbar-nav  mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active fw-bold" aria-current="page" href="#">Home</a>
+          <a class="nav-link active fw-bold" aria-current="page" href="/user/Dashboard">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link fw-bold" href="#">Hotels</a>

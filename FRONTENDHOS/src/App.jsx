@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from './Components/Home/Layout/Layout';
 import Landing from './Components/Home/Landing/Landing';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import Signin from './Components/Auth/Signin/Signin';
 import Signup from './Components/Auth/SignUp/SignUp';
 import Layoutdash from './Components/Dashboard/Layoutdash';
@@ -25,10 +25,10 @@ const App = () => {
       </Route>
 
       <Route path="/user/dashboard" element={<Layoutdash />}>
-        <Route index element={<Dashboard />} />  {/* This route renders when '/user/dashboard' is hit */}
+        <Route index element={<Dashboard />} /> 
       </Route>
 
-      <Route path="/hotels" element={<TopNavbar />}>
+      <Route path="/user/hotels" element={<TopNavbar />}>
         <Route index element={<TopHotels />} /> 
         <Route path=":hotelid" element={<Hoteldetails />} />
       </Route>
