@@ -44,7 +44,7 @@ const Navbar = () => {
               </a>
             </div>
           </div>
-          <Link to="/user/Signup" className="text-decoration-none">
+          <Link to="user/Signup" className="text-decoration-none">
           <button class="btn  fw-bold me-3 d-lg-block " style={{backgroundColor:"#445297", color:"white"}}>
             Get Started<i class="fa fa-arrow-right ms-3"></i>
           </button>

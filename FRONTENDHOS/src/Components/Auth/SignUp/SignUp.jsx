@@ -27,7 +27,7 @@ const Signup = () => {
         .then((res) => {
           console.log(res);
           Swal.fire("User Registered, Login to proceed");
-          navigate("/user/Signin");
+          navigate("user/Signin");
         })
         .catch((err) => {
           console.log(err);

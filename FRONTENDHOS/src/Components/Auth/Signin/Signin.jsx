@@ -89,7 +89,7 @@ const Signin = () => {
                             <p>
                                 <a href="">Forget password?</a>
                                <small>Don't have an account?</small> <a href="">
-                                <Link to="/user/Signup">
+                                <Link to="user/Signup">
                                 Create an account.
                                 </Link>
                                 </a>
