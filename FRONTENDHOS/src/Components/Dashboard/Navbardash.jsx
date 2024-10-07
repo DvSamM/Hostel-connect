@@ -22,7 +22,7 @@ const Navbardash = () => {
           <a class="nav-link active fw-bold" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-bold" href="/hotels">Hotels</a>
+          <a class="nav-link fw-bold" href="/user/hotels">Hotels</a>
         </li>
         <li class="nav-item">
           <a class="nav-link fw-bold" href="#">About Us</a>
